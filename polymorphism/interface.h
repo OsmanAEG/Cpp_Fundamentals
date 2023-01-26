@@ -22,7 +22,6 @@ public:
   virtual const std::string getDescription() const{
     return license + " from " + std::to_string(year);
   }
-
 };
 
 // car inherits from vehicle
