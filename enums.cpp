@@ -21,4 +21,6 @@ int main(){
 
   std::cout << "B is a " << lift_output(B)
             << " with value " << B << std::endl;
+
+  return 0;
 }
