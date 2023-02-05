@@ -90,7 +90,7 @@ auto value_input_rval_ref_2(Vector_type&& vec, int N, int it){
 template<typename Vector_type>
 auto value_input_ref(Vector_type& vec, int N, int it){
   if(it){
-    std::cout << "FUNCTION: Value Input REF 1" << std::endl;
+    std::cout << "FUNCTION: Value Input REF" << std::endl;
     std::cout << "SIZE: " << vec.size()
               << "CAPACITY: " << vec.capacity() << std::endl;
   }
@@ -111,8 +111,6 @@ auto value_input_ref(Vector_type& vec, int N, int it){
     std::cout << "ALLOCATIONS: " << allocs << std::endl;
     std::cout << "CAPACITY: " << vec.capacity() << "\n" << std::endl;
   }
-
-  return vec;
 }
 
 int main(int argc, char *argv[]){
@@ -145,10 +143,10 @@ int main(int argc, char *argv[]){
 
     int prnt = i == it? 1 : 0;
 
-    vec = value_input(vec, N, prnt);
-    //vec = value_input_rval_ref_1(vec, N, prnt);
-    //vec = value_input_rval_ref_2(vec, N, prnt);
-    //vec = value_input_ref(vec, N, prnt);
+    //vec = value_input(vec, N, prnt);
+    //vec = value_input_rval_ref_1(std::move(vec), N, prnt);
+    //vec = value_input_rval_ref_2(std::move(vec), N, prnt);
+    value_input_ref(vec, N, prnt);
   }
 
   return 0;
